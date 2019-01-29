@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      App-App Ionic
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+      <ion-item>
+        <ion-input placeholder="Enter URL" [(ngModel)]="url"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Enter data" [(ngModel)]="dataObject"></ion-input>
+      </ion-item>
+  </ion-list>
+
+  <button ion-button (click)="getData()">GET</button>
+
+  <button ion-button (click)="postData()">POST</button>
+  <!-- <ion-row>RETURNED DATA:</ion-row> -->
+  <!-- <ion-row *ngFor="let item of items">{{item.id}}</ion-row> -->
+
+</ion-content>
