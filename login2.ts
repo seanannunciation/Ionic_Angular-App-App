@@ -17,7 +17,7 @@ import { Platform } from 'ionic-angular';
 
 //Importing the PostGet Service ad http
 import { PostGetService } from '../services/post-get.service';
-import { http } from '@angular/http';
+import { Http } from '@angular/http';
 
 export interface RequestOptions {
 	headers?: HttpHeaders;

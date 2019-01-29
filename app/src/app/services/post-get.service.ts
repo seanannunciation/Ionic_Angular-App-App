@@ -15,15 +15,15 @@ export class PostGetService {
    }
 
    getData(urlInput,values){
-     // let params=values.map(res => )
-
+     // let url='https://jsonplaceholder.typicode.com/posts';
      let url=urlInput;
      let headers= new Headers();
      headers.append('Content-Type', 'application/x-www-form-urlencoded');
-     // let url='https://jsonplaceholder.typicode.com/posts';
      let getFormData=new FormData();
-
-     this.data = this.http.get(url,values, {headers:headers}).pipe(
+     // let body={
+     //   message: values
+     // }
+     this.data = this.http.get(url, {headers:headers}).pipe(
        map(res => res.json()))
 
        return this.data;

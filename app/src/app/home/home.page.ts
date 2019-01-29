@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { PostGetService } from '../services/post-get.service';
-import { http } from '@angular/http';
+import { Http } from '@angular/http';
 
 import { map } from 'rxjs/operators';
 
@@ -26,13 +26,13 @@ export class HomePage {
   // }
 
   getData(){
-      // let postFormData = new FormData();
-      // postFormData.append('url',this.url);
-      // postFormData.append('data',this.dataObject);
-      // let body={
-      //   url: this.url,
-      //   data: this.dataObject
-      // }
+      let postFormData = new FormData();
+      postFormData.append('url',this.url);
+      postFormData.append('data',this.dataObject);
+      let body={
+        url: this.url,
+        data: this.dataObject
+      }
       this.postGet.getData(this.url,this.dataObject)
       .subscribe(data => {
       // data.map((val) => console.log(val.title));
@@ -50,6 +50,10 @@ export class HomePage {
       url: this.url,
       data: this.dataObject
     }
+    // console.log(JSON.parse(JSON.stringify(postFormData || null)));
+    // console.log(JSON.stringify(body));
+    // JSON.stringify(postFormData);
+    // JSON.stringify(postFormData);
     this.postGet.postData(this.url,body)
       .subscribe(data => {
             this.items=data;
